@@ -1,0 +1,19 @@
+hub:
+  image: selenium/hub
+  ports:
+    - "4444:4444"
+#firefox:
+#  image: selenium/node-firefox
+#  links:
+#    - hub
+#  log_driver: none
+chrome:
+  image: selenium/node-chrome-debug
+  links:
+    - hub
+  volumes:
+    - /dev/shm:/dev/shm
+  ports:
+    - 5900 # run $ docker port e2e_chrome_1 5900
+           # to get the actual address to connect
+           # to via VNC viewer
