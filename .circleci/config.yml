@@ -10,7 +10,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: selenium/standalone-chrome
+      - image: circleci:node:7.10.0-browsers
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
