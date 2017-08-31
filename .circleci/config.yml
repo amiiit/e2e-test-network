@@ -3,9 +3,9 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2
-  machine:
-    node:
-      version: 0.11.8
+machine:
+  node:
+    version: 0.11.8
 jobs:
   build:
     docker:
