@@ -56,7 +56,7 @@ export default class NetworkTestUtils {
       requests = this.getClientRequestsFromCurrentFrame()
       this.lastSwitchedFrame !== null && this.browser.frame(this.lastSwitchedFrame)
     }
-    return requests && requests.map(r => r.request)
+    return requests && requests.map(r => r.request) || []
   }
 
   getRequestsContaining = (urlPart) => {
