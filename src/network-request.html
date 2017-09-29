@@ -7,13 +7,14 @@
     <script type="text/javascript">
       window.addEventListener('load', function () {
         setInterval(()=>{
-          console.log('running interval')
           fetch('https://api.coindesk.com/v1/bpi/currentprice/euro.json')
             .then(res => res.json())
             .then(function (json) {
               document.getElementById('europrice').innerText = json.bpi.EUR.rate_float
               document.getElementById('usdprice').innerText = json.bpi.USD.rate_float
             })
+
+          document.getElementById('debug').innerText = JSON.stringify(__e2eFetchRequests)
         }, 1000)
       })
     </script>
@@ -26,6 +27,8 @@
         <p>The actual bitcoin price is &euro;<span id="europrice">...</span> which is equivalent to $<span id="usdprice">...</span>
         </p>
     </div>
+    <hr/>
+    <pre id="debug" style="white-space: normal"></pre>
 </div>
 </body>
 </html>
