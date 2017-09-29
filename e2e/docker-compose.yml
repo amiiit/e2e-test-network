@@ -8,7 +8,7 @@ hub:
 #    - hub
 #  log_driver: none
 chrome:
-  image: selenium/node-chrome-debug:3.4.1
+  image: selenium/node-chrome-debug:3.4.0
   links:
     - hub
   volumes:
