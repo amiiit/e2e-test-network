@@ -6,7 +6,7 @@
     "e2e-spec": "./node_modules/webdriverio/bin/wdio --spec $SPEC",
     "e2e-complete": "yarn backend-e2e; docker-compose -f __tests__/e2e/docker-compose.yml up -d && yarn start-e2e-mode & (sleep 20 && yarn e2e)",
     "e2e-complete-ci": "yarn backend-e2e-ci & yarn start-e2e-mode & (sleep 20 && tail /tmp/deliveryengine/logs/error.log && yarn e2e)",
-    "selenium-start": "docker rm e2e_chrome_debug; docker run --name e2e_chrome_debug -p 4444:4444 -p 5900:5900 -v /dev/shm:/dev/shm selenium/standalone-chrome-debug",
+    "selenium-start": "docker rm e2e_chrome_debug; docker run --name e2e_chrome_debug -p 4444:4444 -p 5900:5900 -v /dev/shm:/dev/shm selenium/standalone-chrome-debug:3.4.1",
     "debug-e2e-browser": "/Applications/VNC\\ Viewer.app/Contents/MacOS/vncviewer $(docker port e2e_chrome_debug 5900)",
     "start": "export NODE_ENV=development; webpack-dev-server",
     "start-e2e-mode": "export NODE_ENV=e2e; webpack-dev-server"
