@@ -2,7 +2,7 @@
   "scripts": {
     "test": "ava",
     "wdio": "wdio",
-    "e2e": "yarn start-e2e-mode & ./node_modules/webdriverio/bin/wdio",
+    "e2e": "yarn start-e2e-mode & (sleep 5 && yarn wdio)",
     "e2e-spec": "./node_modules/webdriverio/bin/wdio --spec $SPEC",
     "e2e-complete": "yarn backend-e2e; docker-compose -f __tests__/e2e/docker-compose.yml up -d && yarn start-e2e-mode & (sleep 20 && yarn e2e)",
     "e2e-complete-ci": "yarn backend-e2e-ci & yarn start-e2e-mode & (sleep 20 && tail /tmp/deliveryengine/logs/error.log && yarn e2e)",
