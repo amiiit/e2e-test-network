@@ -23,8 +23,9 @@ describe('Tracking Service Worker', function () {
         isNumeric = !isNaN(parseFloat(text))
       } catch (e) {
       }
+      console.log('isNumeric',isNumeric)
       return isNumeric
-    }, 5000)
+    }, 50000)
   })
 
   it('The bitcoin API should be called exactly once', () => {

@@ -2,24 +2,14 @@
   "scripts": {
     "test": "ava",
     "wdio": "wdio",
-    "e2e": "./node_modules/webdriverio/bin/wdio",
+    "e2e": "yarn start-e2e-mode & ./node_modules/webdriverio/bin/wdio",
     "e2e-spec": "./node_modules/webdriverio/bin/wdio --spec $SPEC",
     "e2e-complete": "yarn backend-e2e; docker-compose -f __tests__/e2e/docker-compose.yml up -d && yarn start-e2e-mode & (sleep 20 && yarn e2e)",
     "e2e-complete-ci": "yarn backend-e2e-ci & yarn start-e2e-mode & (sleep 20 && tail /tmp/deliveryengine/logs/error.log && yarn e2e)",
     "selenium-start": "docker rm e2e_chrome_debug; docker run --name e2e_chrome_debug -p 4444:4444 -p 5900:5900 -v /dev/shm:/dev/shm selenium/standalone-chrome-debug",
     "debug-e2e-browser": "/Applications/VNC\\ Viewer.app/Contents/MacOS/vncviewer $(docker port e2e_chrome_debug 5900)",
-    "backend-build": "make build -C ..;",
-    "backend-e2e-ci": "DE_TEMPLATE_CSS=https://ads.travelaudience.com/css DE_TEMPLATE_CREATIVE=https://$(./node_modules/my-local-ip/index.js):8080 DE_TEMPLATE_TEMPLATES=https://ads.travelaudience.com/js/templates make run-e2e-instance -C ..;",
-    "backend-e2e": "export CSS_DEV_URL=https://ads.travelaudience.com/css; export CREATIVE_DEV_URL=https://$(./node_modules/my-local-ip/index.js):8080; export TEMPLATE_DEV_URL=https://ads.travelaudience.com/js/templates ; docker-compose -f ../docker-compose.dev.yml build; docker-compose -f ../docker-compose.dev.yml up",
-    "backend-dev": "export CSS_DEV_URL=http://ads.travelaudience.com/css; export CREATIVE_DEV_URL=http://$(./node_modules/my-local-ip/index.js):8080; export TEMPLATE_DEV_URL=http://ads.travelaudience.com/js/templates ; docker-compose -f ../docker-compose.dev.yml build; docker-compose -f ../docker-compose.dev.yml up",
-    "legacy-build": "./node_modules/node-sass/bin/node-sass css/common/default.css ../htdocs/css/compressed.css --output-style compressed",
     "start": "export NODE_ENV=development; webpack-dev-server",
-    "start-staging": "export NODE_ENV=staging; webpack-dev-server",
-    "start-e2e-mode": "export NODE_ENV=e2e; webpack-dev-server",
-    "build": "export NODE_ENV=${FRONTEND_BUILD_ENV:-production}; webpack --config webpack.config.babel.js",
-    "build-prod-debug": "export NODE_ENV=production_debug; webpack --config webpack.config.babel.js",
-    "buildReadable": "webpack --config webpack.config.babel.js",
-    "buildallstaging": "export NODE_ENV=staging; export BUILD_ALL=true; webpack --config webpack.config.babel.js"
+    "start-e2e-mode": "export NODE_ENV=e2e; webpack-dev-server"
   },
   "dependencies": {
 
