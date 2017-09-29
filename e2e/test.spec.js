@@ -31,7 +31,7 @@ describe('Tracking Service Worker', function () {
     browser.waitUntil(() => {
       const requests = networkUtils.getRequestsStarting('https://api.coindesk.com')
       return requests.length > 1
-    })
+    }, 2000)
   })
 
 })
