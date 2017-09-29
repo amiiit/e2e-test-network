@@ -15,7 +15,6 @@ describe('Tracking Service Worker', function () {
   })
 
   it('Test the price is displayed', () => {
-    browser.url('/')
     browser.waitUntil(() => {
       const text = browser.getText('#europrice')
       let isNumeric = false
