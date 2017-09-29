@@ -16,6 +16,7 @@ try {
           window.location.reload()
         }
         navigator.serviceWorker.addEventListener('message', function(event) {
+          console.log('captured request', event.data)
           window.__e2eFetchRequests.push(event.data)
         })
       })
