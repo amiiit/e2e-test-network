@@ -1,6 +1,6 @@
 # Use a Service Worker for your e2e testing
 
-![https://circleci.com/gh/amiiit/e2e-test-network](https://circleci.com/gh/amiiit/e2e-test-network.svg?style=shield)
+![https://circleci.com/gh/amiiit/e2e-test-network](https://circleci.com/gh/amiiit/e2e-test-network.svg?style=shield) See the build in [CircleCI](https://circleci.com/gh/amiiit/e2e-test-network)
 
 
 ## Test network activity using ServiceWorker and Selenium.
