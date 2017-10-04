@@ -30,7 +30,7 @@ describe('Tracking Service Worker', function () {
   it('The bitcoin API should be called at least once', () => {
     browser.waitUntil(() => {
       const requests = networkUtils.getRequestsStarting('https://api.coindesk.com')
-      return requests.length === 10000
+      return requests.length === 1
     }, 2000)
   })
 
