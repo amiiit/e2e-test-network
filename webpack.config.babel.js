@@ -8,6 +8,7 @@ const entry = {
 }
 if (IS_E2E) {
   entry['e2e/swLoader'] = './e2e/swLoader.js'
+  entry['sw'] = './e2e/sw.js'
 }
 
 export default {
